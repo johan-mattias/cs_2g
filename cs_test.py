@@ -6,6 +6,8 @@ bob = Image('bob.png', 20, 20)
 overture = Sound('1812.mp3')
 
 print(overture)
+#
+# print(dir(overture))
 
 overture.play()
 bob.width=60
