@@ -1,22 +1,19 @@
 from cmu_graphics import *
-from playsound import playsound
-Rect(50,50,150,150, fill='blue')
 
-bob = Image('bob.png', 20, 20)
-playsound('1812.mp3')
-#music = Sound('https://s3.amazonaws.com/cmu-cs-academy.lib.prod/sounds/1812-overture-finale.mp3')
-# really great stuff
-print(overture)
-print(music)
-#
-# print(dir(overture))
+from level.level1 import *
 
-#overture.play()
-music.play()
-bob.width=60
-bob.height=60
+with open('highscore.txt') as f:
+    highscore = f.readline()
+print(highscore)
 
+drawScene()
 
+Label(highscore, 100, 100)
+highscore = int(highscore)
+highscore += 5
+with open('highscore.txt', 'w') as f:
+    f.write(str(highscore))
 
+player = Rect(20, 20, 30, 30)
 
 cmu_graphics.run()
